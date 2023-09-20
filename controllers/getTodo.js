@@ -59,7 +59,7 @@ exports.getTodoByID = async(req, res) =>{
             {
                 success: false,
                 error: err.message,
-                message:"Entire Todo Data is fetched",
+                message:"server error",
             }
         )
     }
