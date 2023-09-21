@@ -5,6 +5,8 @@ const Todo = require("../models/Todo");
 
 exports.updateTodo = async(req, res) =>{
     try {
+        // fetch data from req body
+        const {title, description} = req.body;
         // extract todo items basis on id
         const {id} = req.params;
         await Todo.findByIdAndUpdate(
@@ -15,7 +17,7 @@ exports.updateTodo = async(req, res) =>{
         res.status(200).json(
             {
                 success: true,
-                data: todo,
+                // data: todo,
                 message:`updated succeesfully`,
             }
         )
